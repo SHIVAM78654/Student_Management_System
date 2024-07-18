@@ -1,0 +1,145 @@
+<div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+  <div class="wrapper wrapper--w790">
+    <br /><br /><br />
+    <div class="card card-5">
+      <div class="card-heading">
+        <h2 class="title">Student Registration</h2>
+      </div>
+      <div class="card-body">
+        <form name="StudentRegistration" method="POST" autocomplete="off">
+          {% csrf_token %}
+
+          <div class="form-row">
+            <div class="name">First Name</div>
+            <div class="value">
+              <div class="input-group">
+                <input
+                  type="text"
+                  name="fname"
+                  maxlength="150"
+                  class="input--style-5"
+                  required="true"
+                  id="id_first_name"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="name">Last Name</div>
+            <div class="value">
+              <div class="input-group">
+                <input
+                  type="text"
+                  name="Lname"
+                  maxlength="150"
+                  class="input--style-5"
+                  required="true"
+                  id="id_first_name"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="name">Username</div>
+            <div class="value">
+              <div class="input-group">
+                <input
+                  type="text"
+                  name="username"
+                  maxlength="150"
+                  class="input--style-5"
+                  required="true"
+                  id="id_first_name"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="name">Password</div>
+            <div class="value">
+              <div class="input-group">
+                <input
+                  type="password"
+                  name="password"
+                  maxlength="150"
+                  class="input--style-5"
+                  required="true"
+                  id="id_first_name"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="name">Branch</div>
+            <div class="value">
+              <div class="input-group">
+                <input
+                  type="text"
+                  name="branch"
+                  maxlength="150"
+                  class="input--style-5"
+                  required="true"
+                  id="id_first_name"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="name">Roll No</div>
+            <div class="value">
+              <div class="input-group">
+                <input
+                  type="text"
+                  name="rollno"
+                  maxlength="150"
+                  class="input--style-5"
+                  required="true"
+                  id="id_first_name"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="name">Contact No.</div>
+            <div class="value">
+              <div class="input-group">
+                <input
+                  type="text"
+                  name="contactno"
+                  maxlength="150"
+                  class="input--style-5"
+                  required="true"
+                  id="id_first_name"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button
+              class="btn btn--radius-2 btn-danger btn-block"
+              type="submit"
+            >
+              Register
+            </button>
+          </div>
+        </form>
+        <br />
+        <p style="text-align: center">
+          Already have an account?
+          <a style="text-decoration: none" href="/student_login/"
+            >Login To Continue</a
+          >
+        </p>
+      </div>
+      {% if msg%}
+      <h1>{{msg}}</h1>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock content %}

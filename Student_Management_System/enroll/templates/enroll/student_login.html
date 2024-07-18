@@ -1,0 +1,42 @@
+{% extends 'enroll/home_all.html' %}{% block content%}
+<div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+  <div class="wrapper wrapper--w790">
+    <br /><br /><br />
+    <div class="card card-5">
+      <div class="card-heading">
+        <h2 class="title">Student Login</h2>
+      </div>
+      <div class="card-body">
+        <form method="POST" autocomplete="off">
+          {% csrf_token %} {% for field in form %}
+          <div class="form-row">
+            <div class="name">{{ field.label }}</div>
+            <div class="value">
+              <div class="input-group">{{ field }}</div>
+            </div>
+          </div>
+          {% endfor %}
+          <div class="text-center">
+            <button
+              class="btn btn--radius-2 btn-success btn-block"
+              type="submit"
+            >
+              Login
+            </button>
+          </div>
+        </form>
+        <br />
+        <p style="text-align: center">
+          Don't have an account?
+          <a style="text-decoration: none" href="/student_signup/"
+            >Register Now</a
+          >
+        </p>
+        {% if msg %}
+        <h3 style="margin-top: 20px; margin-left: 150px; color: red">{{msg}}</h3>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content%}

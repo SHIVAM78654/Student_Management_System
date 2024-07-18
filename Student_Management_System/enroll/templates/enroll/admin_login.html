@@ -1,0 +1,66 @@
+{% extends 'enroll/home_all.html' %}
+ {% block content %}
+<div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+  <div class="wrapper wrapper--w790">
+    <br /><br /><br />
+    <div class="card card-5">
+      <div class="card-heading">
+        <h2 class="title">Admin Login</h2>
+      </div>
+      <div class="card-body">
+        <form action="" method="POST">
+          {% csrf_token %}
+          <div class="form-row">
+            <div class="name">Username</div>
+            <div class="value">
+              <div class="input-group">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    name="username"
+                    autofocus=""
+                    autocapitalize="none"
+                    autocomplete="username"
+                    maxlength="150"
+                    class="input--style-5"
+                    required=""
+                    id="id_username"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="name">Password</div>
+            <div class="value">
+              <div class="input-group">
+                <input
+                  type="password"
+                  name="password"
+                  autocomplete="password"
+                  class="input--style-5"
+                  required=""
+                  id="id_password"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button
+              class="btn btn--radius-2 btn-success btn-block"
+              type="submit"
+            >
+              Login
+            </button>
+            {% if er %}
+            <h3 style="color: red;padding-top: 20px;">{{er}}</h3>
+            {% endif %}
+          </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

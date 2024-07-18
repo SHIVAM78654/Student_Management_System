@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Management System</title>
+    <style>
+      .img {
+  position: absolute;
+  z-index: -1;
+}
+
+.stu-title {
+  position:fixed;
+  width: 400px;
+  font-size: 40px;
+  padding-left: 50px;
+  top: 300px;
+  left: 50%;
+  color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 1;
+}
+    </style>
+  </head>
+  <body>
+    {% include 'enroll/header.html' %}
+    <img class="img"
+      src="{% static 'enroll/images/school-management.jpg' %}"
+      height="100%"
+      width="100%"
+    />
+    <div class="stu-title">
+      <a class="nav-link" style="color: #734b6d;" href="{% url 'student_login' %}"><i class="fas fa-user"></i> Student Login</i></a>
+      <a class="nav-link"  style="color: #734b6d;" href="admin_login/"><i class="fas fa-user-shield"></i> Admin Login</i></a>
+    </div>
+    
+    {% block content %} {% endblock content %} 
+  
+  </body>
+</html>
